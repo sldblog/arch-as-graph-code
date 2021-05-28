@@ -6,6 +6,8 @@ MERGE (this:Container {id:"hmpps-interventions-service"})
   SET this.apiDoc  = "https://hmpps-interventions-service-dev.apps.live-1.cloud-platform.service.justice.gov.uk/swagger-ui.html"
   SET this.dataDoc = "https://hmpps-interventions-service-dev.apps.live-1.cloud-platform.service.justice.gov.uk/meta/schema/"
   MERGE (this)-[:belongs_to]->(itsSystem)
+  // is differentiation between 'referenced' and 'owned' entity important?
+  // should they be differently coloured to quickly find out undocumented owners?
 
 MERGE (communityApi:Container {id:"community-api"})
   MERGE (this)-[:writes_to]->(communityApi)
