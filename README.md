@@ -23,3 +23,32 @@ centralised model
 
 During mainline CI, the job could apply the query against a centralised
 graph database, which would then be extended with the up-to-date model
+
+## How to run
+
+You will need
+- Docker
+
+`./run.sh` will start up a dockerised Neo4J
+
+`./apply.sh` will apply all model fragments, simulating each folder as a separate git repo
+
+## Viewing the results
+
+Navigate to http://localhost:7474/browser/.
+
+To visualise all containers:
+```
+MATCH (n:Container)
+RETURN n
+```
+
+To visualise everything:
+```
+MATCH (n) RETURN n
+```
+
+To delete everything:
+```
+MATCH (n) DETACH DELETE n
+```
