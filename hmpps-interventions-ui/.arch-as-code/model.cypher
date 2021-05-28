@@ -1,9 +1,9 @@
-MERGE (thisSystem:SoftwareSytem {id:"hmpps-interventions"})
-  ON CREATE SET thisSystem.name = "Refer and monitor an intervention"
+MERGE (itsSystem:SoftwareSytem {id:"hmpps-interventions"})
+  ON CREATE SET itsSystem.name = "Refer and monitor an intervention"
 
 MERGE (this:Container {id:"hmpps-interventions-ui"})
   SET this.source  = "https://github.com/ministryofjustice/hmpps-interventions-ui"
-  MERGE (this)-[:belongs_to]->(thisSystem)
+  MERGE (this)-[:belongs_to]->(itsSystem)
 
 MERGE (service:Container {id:"hmpps-interventions-service"})
   MERGE (this)-[:writes_to]->(service)
