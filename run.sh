@@ -9,3 +9,5 @@ docker run \
   -v "$HOME"/neo4j/plugins:/plugins \
   --env NEO4J_AUTH=neo4j/test \
   neo4j:latest
+
+docker ps --filter name=testneo4j
